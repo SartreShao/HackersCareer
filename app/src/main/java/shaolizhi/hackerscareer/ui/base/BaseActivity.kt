@@ -5,7 +5,6 @@ import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.WindowManager
-import butterknife.ButterKnife
 import shaolizhi.hackerscareer.R
 import shaolizhi.hackerscareer.utils.showToast
 
@@ -28,7 +27,6 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         setContentView(layoutId())
-        ButterKnife.bind(this)
         created(savedInstanceState)
     }
 

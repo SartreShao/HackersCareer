@@ -8,9 +8,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import butterknife.ButterKnife
-import butterknife.Unbinder
 import shaolizhi.hackerscareer.R
 import shaolizhi.hackerscareer.utils.showToast
 
@@ -20,8 +17,6 @@ import shaolizhi.hackerscareer.utils.showToast
  */
 
 abstract class BaseFragment : Fragment() {
-
-    private var unbinder: Unbinder? = null
 
     private lateinit var mActivity: Context
 
@@ -38,20 +33,12 @@ abstract class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        unbinder = ButterKnife.bind(this, view)
         created(savedInstanceState)
     }
 
     override fun onResume() {
         super.onResume()
         resumed()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if (unbinder != null) {
-            unbinder!!.unbind()
-        }
     }
 
     override fun onAttach(context: Context) {

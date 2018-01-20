@@ -20,10 +20,10 @@ class HomePageActivity : BaseActivity(),
         NavigationView.OnNavigationItemSelectedListener, HomePageContract.View {
 
     //Views
-    private val toolBar: Toolbar = home_page_act_toolbar
-    private val floatButton: FloatingActionButton = home_page_act_floatingactionbutton
-    private val drawerLayout: DrawerLayout = home_page_act_drawerlayout
-    private val navigationView: NavigationView = home_page_act_navigationview
+    private lateinit var toolBar: Toolbar
+    private lateinit var floatButton: FloatingActionButton
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
 
     //click event
     private fun clickFloatButton(view: View) {
@@ -33,16 +33,21 @@ class HomePageActivity : BaseActivity(),
 
     //for presenter
     override fun setUpView() {
-        setSupportActionBar(toolBar)
+        fun initView() {
+            toolBar = home_page_act_toolbar
+            floatButton = home_page_act_floatingactionbutton
+            drawerLayout = home_page_act_drawerlayout
+            navigationView = home_page_act_navigationview
+        }
 
+        initView()
+        setSupportActionBar(toolBar)
         floatButton.setOnClickListener { view ->
             clickFloatButton(view)
         }
-
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolBar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
         navigationView.setNavigationItemSelectedListener(this)
     }
 
