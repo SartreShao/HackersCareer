@@ -5,10 +5,9 @@ import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.WindowManager
-
 import butterknife.ButterKnife
 import shaolizhi.hackerscareer.R
-import shaolizhi.hackerscareer.utils.ToastUtils
+import shaolizhi.hackerscareer.utils.showToast
 
 
 /**
@@ -52,22 +51,22 @@ abstract class BaseActivity : AppCompatActivity() {
 
 
     private fun toast401() {
-        ToastUtils.showToast(getString(R.string.base_string1))
+        showToast(getString(R.string.base_string1))
         Log.i(this.javaClass.simpleName, getString(R.string.base_string3))
     }
 
     private fun toast402() {
-        ToastUtils.showToast(getString(R.string.base_string1))
+        showToast(getString(R.string.base_string1))
         Log.i(this.javaClass.simpleName, getString(R.string.base_string4))
     }
 
     private fun toast203() {
-        ToastUtils.showToast(getString(R.string.base_string1))
+        showToast(getString(R.string.base_string1))
         Log.i(this.javaClass.simpleName, getString(R.string.base_string5))
     }
 
     private fun toast403() {
-        ToastUtils.showToast(getString(R.string.base_string7))
+        showToast(getString(R.string.base_string7))
         Log.i(this.javaClass.simpleName, getString(R.string.base_string6))
     }
 }
