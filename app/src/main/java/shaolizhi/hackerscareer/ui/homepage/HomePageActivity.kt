@@ -16,7 +16,8 @@ import kotlinx.android.synthetic.main.app_bar_home_page.*
 import shaolizhi.hackerscareer.R
 import shaolizhi.hackerscareer.ui.base.BaseActivity
 
-class HomePageActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, HomePageContract.View {
+class HomePageActivity : BaseActivity(),
+        NavigationView.OnNavigationItemSelectedListener, HomePageContract.View {
 
     //Views
     private val toolBar: Toolbar = home_page_act_toolbar
